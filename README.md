@@ -1,7 +1,7 @@
 pebble-watchface
 ================
 
-#My First Pebble Watchface. 
+###My First Pebble Watchface. 
 
 **Work In Progress**
 

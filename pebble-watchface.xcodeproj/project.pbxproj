@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA4D7F60178A553A002D9BF4 /* libpebble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4D7F5D178A553A002D9BF4 /* libpebble.a */; };
+		DA4D7F61178A553A002D9BF4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DA4D7F5F178A553A002D9BF4 /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA4D7F3E178A5235002D9BF4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DA4D7F40178A5235002D9BF4 /* pebble-digital-frame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "pebble-digital-frame"; path = "pebble-watchface"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4D7F57178A553A002D9BF4 /* pebble_app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pebble_app.h; sourceTree = "<group>"; };
+		DA4D7F58178A553A002D9BF4 /* pebble_app_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pebble_app_info.h; sourceTree = "<group>"; };
+		DA4D7F59178A553A002D9BF4 /* pebble_fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pebble_fonts.h; sourceTree = "<group>"; };
+		DA4D7F5A178A553A002D9BF4 /* pebble_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pebble_os.h; sourceTree = "<group>"; };
+		DA4D7F5B178A553A002D9BF4 /* pebble_os.h.orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pebble_os.h.orig; sourceTree = "<group>"; };
+		DA4D7F5D178A553A002D9BF4 /* libpebble.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpebble.a; sourceTree = "<group>"; };
+		DA4D7F5F178A553A002D9BF4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; tabWidth = 2; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA4D7F3D178A5235002D9BF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4D7F60178A553A002D9BF4 /* libpebble.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA4D7F35178A5235002D9BF4 = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F43178A5235002D9BF4 /* pebble-watchface */,
+				DA4D7F41178A5235002D9BF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA4D7F41178A5235002D9BF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F40178A5235002D9BF4 /* pebble-digital-frame */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA4D7F43178A5235002D9BF4 /* pebble-watchface */ = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F56178A553A002D9BF4 /* include */,
+				DA4D7F5C178A553A002D9BF4 /* lib */,
+				DA4D7F5E178A553A002D9BF4 /* src */,
+			);
+			path = "pebble-watchface";
+			sourceTree = "<group>";
+		};
+		DA4D7F56178A553A002D9BF4 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F57178A553A002D9BF4 /* pebble_app.h */,
+				DA4D7F58178A553A002D9BF4 /* pebble_app_info.h */,
+				DA4D7F59178A553A002D9BF4 /* pebble_fonts.h */,
+				DA4D7F5A178A553A002D9BF4 /* pebble_os.h */,
+				DA4D7F5B178A553A002D9BF4 /* pebble_os.h.orig */,
+			);
+			name = include;
+			path = ../../../pebblekit/Pebble/sdk/include;
+			sourceTree = "<group>";
+		};
+		DA4D7F5C178A553A002D9BF4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F5D178A553A002D9BF4 /* libpebble.a */,
+			);
+			name = lib;
+			path = ../../../pebblekit/Pebble/sdk/lib;
+			sourceTree = "<group>";
+		};
+		DA4D7F5E178A553A002D9BF4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA4D7F5F178A553A002D9BF4 /* main.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA4D7F3F178A5235002D9BF4 /* pebble-watchface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA4D7F4A178A5235002D9BF4 /* Build configuration list for PBXNativeTarget "pebble-watchface" */;
+			buildPhases = (
+				DA4D7F3C178A5235002D9BF4 /* Sources */,
+				DA4D7F3D178A5235002D9BF4 /* Frameworks */,
+				DA4D7F3E178A5235002D9BF4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pebble-watchface";
+			productName = "pebble-digital-frame";
+			productReference = DA4D7F40178A5235002D9BF4 /* pebble-digital-frame */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA4D7F37178A5235002D9BF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Chris Miller";
+			};
+			buildConfigurationList = DA4D7F3A178A5235002D9BF4 /* Build configuration list for PBXProject "pebble-watchface" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA4D7F35178A5235002D9BF4;
+			productRefGroup = DA4D7F41178A5235002D9BF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA4D7F3F178A5235002D9BF4 /* pebble-watchface */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA4D7F3C178A5235002D9BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4D7F61178A553A002D9BF4 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DA4D7F48178A5235002D9BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DA4D7F49178A5235002D9BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA4D7F4B178A5235002D9BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../pebblekit/Pebble/sdk/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA4D7F4C178A5235002D9BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../pebblekit/Pebble/sdk/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA4D7F3A178A5235002D9BF4 /* Build configuration list for PBXProject "pebble-watchface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4D7F48178A5235002D9BF4 /* Debug */,
+				DA4D7F49178A5235002D9BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA4D7F4A178A5235002D9BF4 /* Build configuration list for PBXNativeTarget "pebble-watchface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4D7F4B178A5235002D9BF4 /* Debug */,
+				DA4D7F4C178A5235002D9BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA4D7F37178A5235002D9BF4 /* Project object */;
+}

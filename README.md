@@ -5,8 +5,8 @@ pebble-watchface
 
 **Work In Progress**
 
-Currently Supports / Displays (Supports Military Time)
+Currently Supports / Displays
 
   - Day, Month Day
-  - -------------
   - HH:MM am/pm
+  - Supports Military Time

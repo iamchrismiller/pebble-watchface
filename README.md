@@ -1,11 +1,12 @@
 pebble-watchface
 ================
 
-My First Pebble Watchface. 
+#My First Pebble Watchface. 
 
+**Work In Progress**
 
-Display
+Currently Supports / Displays (Supports Military Time)
+
   - Day, Month Day
+  - -------------
   - HH:MM am/pm
-  - Supports Military Time
-

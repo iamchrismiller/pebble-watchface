@@ -10,9 +10,9 @@ PBL_APP_INFO(MY_UUID, "Pebble Digital Frame", "Chris Miller", 1, 0, DEFAULT_MENU
 
 //  APP_LOG(APP_LOG_LEVEL_INFO, "Message");
 
-#define HOUR_BUF_LEN 3
-#define MIN_BUF_LEN 3
-#define AMPM_BUF_LEN 3
+#define HOUR_BUF_LEN 4
+#define MIN_BUF_LEN 4
+#define AMPM_BUF_LEN 4
 #define DATE_BUF_LEN 12
 
 #define HOUR_24_FORMAT "%H"
@@ -25,7 +25,6 @@ PBL_APP_INFO(MY_UUID, "Pebble Digital Frame", "Chris Miller", 1, 0, DEFAULT_MENU
 #define DATE_FONT FONT_KEY_ROBOTO_CONDENSED_21
 #define TIME_FONT FONT_KEY_BITHAM_42_BOLD
 #define AMPM_FONT FONT_KEY_GOTHIC_18
-
 
 Window window;
 
@@ -42,18 +41,21 @@ static char minBuffer[MIN_BUF_LEN];
 static char ampmBuffer[AMPM_BUF_LEN];
 static char dateBuffer[DATE_BUF_LEN];
 
+PropertyAnimation hrMinAnim;
+PropertyAnimation ampmAnim;
+
 static char is24HourTime = false;
 
 void update_hour_minutes(PblTm *t) {
-  static char buf[5];
+  static char buf[8];
   string_format_time(hourBuffer, sizeof(hourBuffer), is24HourTime ? HOUR_24_FORMAT : HOUR_12_FORMAT, t);
   string_format_time(minBuffer, sizeof(minBuffer), MINUTE_FORMAT, t);
  
   if (!is24HourTime && (hourBuffer[0] == '0')) {
     memmove(hourBuffer, &hourBuffer[1], sizeof(hourBuffer) - 1);
   }
-
-  snprintf(buf, sizeof buf, HOUR_MIN_FORMAT, hourBuffer, minBuffer);
+  
+  snprintf(buf, sizeof(buf), HOUR_MIN_FORMAT, hourBuffer, minBuffer);
   text_layer_set_text(&hrMinLayer, buf);
 }
 
@@ -90,27 +92,40 @@ void create_text_layer(TextLayer *l, GRect rect, GColor color, GFont font, GText
 }
 
 void date_layer_init(PblTm *t) {
-  create_text_layer(&dateLayer, GRect(0, 2, 144, 34), GColorWhite, DATE_FONT, GTextAlignmentCenter);
+  create_text_layer(&dateLayer, GRect(0, 4, 144, 34), GColorWhite, DATE_FONT, GTextAlignmentCenter);
   layer_add_child(&window.layer, &dateLayer.layer);
   update_date(t);
 }
 
 void time_layer_init(PblTm *t) {
+  GRect hrMinIntroGRect =  GRect(-100, 46, 114, 50);
+  GRect hrMinGRect =  GRect(is24HourTime ? 15 : 6, 46, 114, 50);
+  GRect ampmIntroGRect  =  GRect(160, 70, 24, 54);
+  GRect ampmGRect  =  GRect(118, 70, 24, 54);
+  
   //hour:minute
-  create_text_layer(&hrMinLayer, GRect(is24HourTime ? 15 : 6, 46, 112, 50), GColorWhite, TIME_FONT, GTextAlignmentCenter);
+  create_text_layer(&hrMinLayer, hrMinGRect, GColorWhite, TIME_FONT, GTextAlignmentCenter);
   //am/pm
-  create_text_layer(&ampmLayer, GRect(106, 66, 34, 54), GColorWhite, AMPM_FONT, GTextAlignmentCenter);
+  create_text_layer(&ampmLayer, ampmGRect, GColorWhite, AMPM_FONT, GTextAlignmentCenter);
 
   update_hour_minutes(t);
   update_am_pm(t);
 
   layer_add_child(&window.layer, &hrMinLayer.layer);
   layer_add_child(&window.layer, &ampmLayer.layer);
+
+  //Animate In hour:min
+  property_animation_init_layer_frame(&hrMinAnim, (Layer*)&hrMinLayer, &hrMinIntroGRect, &hrMinGRect);
+  animation_set_duration(&hrMinAnim.animation, 500);
+	animation_schedule(&hrMinAnim.animation);
+  //Animate In am/pm
+  property_animation_init_layer_frame(&ampmAnim, (Layer*)&ampmLayer, &ampmIntroGRect, &ampmGRect);
+  animation_set_duration(&ampmAnim.animation, 500);
+	animation_schedule(&ampmAnim.animation);
 }
 
 void handle_init(AppContextRef ctx) {
   (void) ctx; // Dont need this
-  
   window_init(&window, "Digital Frame");
   window_stack_push(&window, true /* Animated */);
   window_set_background_color(&window, GColorBlack);

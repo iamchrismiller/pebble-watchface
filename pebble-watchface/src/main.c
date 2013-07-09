@@ -98,8 +98,8 @@ void date_layer_init(PblTm *t) {
 }
 
 void time_layer_init(PblTm *t) {
-  GRect hrMinIntroGRect =  GRect(-100, 46, 114, 50);
-  GRect hrMinGRect =  GRect(is24HourTime ? 15 : 6, 46, 114, 50);
+  GRect hrMinIntroGRect =  GRect(-100, 46, 144, 50);
+  GRect hrMinGRect =  GRect(0, 46, 144, 50);
   GRect ampmIntroGRect  =  GRect(160, 70, 24, 54);
   GRect ampmGRect  =  GRect(118, 70, 24, 54);
   
